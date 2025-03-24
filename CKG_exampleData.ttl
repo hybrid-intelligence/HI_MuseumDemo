@@ -1,0 +1,485 @@
+@prefix : <http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#> .
+@prefix aat: <http://vocab.getty.edu/aat/> .
+@prefix crm: <http://www.cidoc-crm.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#> .
+
+<http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#> rdf:type owl:Ontology .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  internal:anonymous-constants
+<internal:anonymous-constants> rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.cidoc-crm.org/P108i_was_produced_by
+crm:P108i_was_produced_by rdf:type owl:ObjectProperty ;
+                          rdfs:domain :HeritageObject ;
+                          rdfs:range crm:E12_Production .
+
+
+###  http://www.cidoc-crm.org/P138_represents
+crm:P138_represents rdf:type owl:ObjectProperty ;
+                    owl:inverseOf crm:P138i_has_representation ;
+                    rdfs:domain crm:E36_Visual_Item ;
+                    rdfs:range crm:E1_CRM_Entity ;
+                    rdfs:comment "Property used to describe that a Visual element of the painting represents something else. For example: the person portrayed represents King Caspar, one of the Magi." .
+
+
+###  http://www.cidoc-crm.org/P138i_has_representation
+crm:P138i_has_representation rdf:type owl:ObjectProperty ;
+                             rdfs:domain crm:E1_CRM_Entity ;
+                             rdfs:range crm:E36_Visual_Item .
+
+
+###  http://www.cidoc-crm.org/P14_carried_out_by
+crm:P14_carried_out_by rdf:type owl:ObjectProperty ;
+                       rdfs:domain crm:E12_Production ;
+                       rdfs:range crm:E21_Person .
+
+
+###  http://www.cidoc-crm.org/P15_was_influenced_by
+crm:P15_was_influenced_by rdf:type owl:ObjectProperty ;
+                          rdfs:domain crm:E12_Production ;
+                          rdfs:range crm:E21_Person .
+
+
+###  http://www.cidoc-crm.org/P16_used_specific_object
+crm:P16_used_specific_object rdf:type owl:ObjectProperty ;
+                             owl:inverseOf crm:P16i_was_used_for ;
+                             rdfs:domain crm:E7_Activity .
+
+
+###  http://www.cidoc-crm.org/P16i_was_used_for
+crm:P16i_was_used_for rdf:type owl:ObjectProperty ;
+                      rdfs:range crm:E7_Activity .
+
+
+###  http://www.cidoc-crm.org/P1_is_identified_by
+crm:P1_is_identified_by rdf:type owl:ObjectProperty .
+
+
+###  http://www.cidoc-crm.org/P2_has_type
+crm:P2_has_type rdf:type owl:ObjectProperty ;
+                rdfs:domain crm:E7_Activity ;
+                rdfs:range crm:E55_Type .
+
+
+###  http://www.cidoc-crm.org/P4_has_Time-span
+crm:P4_has_Time-span rdf:type owl:ObjectProperty ;
+                     rdfs:domain crm:E12_Production ;
+                     rdfs:range crm:E52_Time-Span .
+
+
+###  http://www.cidoc-crm.org/P65_shows_visual_item
+crm:P65_shows_visual_item rdf:type owl:ObjectProperty ;
+                          owl:inverseOf crm:P65i_is_shown_by ;
+                          rdfs:domain :HeritageObject ;
+                          rdfs:range crm:E36_Visual_Item .
+
+
+###  http://www.cidoc-crm.org/P65i_is_shown_by
+crm:P65i_is_shown_by rdf:type owl:ObjectProperty ;
+                     rdfs:domain crm:E36_Visual_Item ;
+                     rdfs:range :HeritageObject .
+
+
+###  http://www.cidoc-crm.org/P67i_is_referred_to_by
+crm:P67i_is_referred_to_by rdf:type owl:ObjectProperty ;
+                           rdfs:domain crm:E7_Activity ;
+                           rdfs:range crm:E33_E41_Linguistic_Appellation .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#hasAssociatedHeritageObject
+:hasAssociatedHeritageObject rdf:type owl:ObjectProperty ;
+                             rdfs:domain :CuratorialNarrative ;
+                             rdfs:range :HeritageObject .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#hasNationality
+:hasNationality rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.cidoc-crm.org/P190_has_symbolic_content
+crm:P190_has_symbolic_content rdf:type owl:DatatypeProperty ;
+                              rdfs:domain crm:E33_E41_Linguistic_Appellation ;
+                              rdfs:range rdfs:Literal .
+
+
+###  http://www.cidoc-crm.org/P33_used_specific_technique
+crm:P33_used_specific_technique rdf:type owl:DatatypeProperty ;
+                                rdfs:domain crm:E12_Production ;
+                                rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#hasDescription
+:hasDescription rdf:type owl:DatatypeProperty ;
+                rdfs:domain :CuratorialNarrative ;
+                rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#hasInterpretation
+:hasInterpretation rdf:type owl:DatatypeProperty ;
+                   rdfs:domain crm:E36_Visual_Item ;
+                   rdfs:range rdfs:Literal .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:DatatypeProperty ;
+           rdfs:range rdfs:Literal ,
+                      xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://vocab.getty.edu/aat/300054766
+<http://vocab.getty.edu/aat/300054766> rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/E12_Production
+crm:E12_Production rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/E1_CRM_Entity
+crm:E1_CRM_Entity rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/E21_Person
+crm:E21_Person rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty rdfs:label ;
+                                 owl:someValuesFrom rdfs:Literal
+                               ] .
+
+
+###  http://www.cidoc-crm.org/E22_Human-Made_Object
+crm:E22_Human-Made_Object rdf:type owl:Class ;
+                          owl:equivalentClass :HeritageObject ;
+                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                            owl:onProperty rdfs:label ;
+                                            owl:someValuesFrom rdfs:Literal
+                                          ] .
+
+
+###  http://www.cidoc-crm.org/E33_E41_Linguistic_Appellation
+crm:E33_E41_Linguistic_Appellation rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/E36_Visual_Item
+crm:E36_Visual_Item rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/E52_Time-Span
+crm:E52_Time-Span rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty rdfs:label ;
+                                    owl:someValuesFrom xsd:integer
+                                  ] .
+
+
+###  http://www.cidoc-crm.org/E55_Type
+crm:E55_Type rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty crm:P1_is_identified_by ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass <http://vocab.getty.edu/aat/300054766>
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty rdfs:label ;
+                               owl:someValuesFrom rdfs:Literal
+                             ] .
+
+
+###  http://www.cidoc-crm.org/E7_Activity
+crm:E7_Activity rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty crm:P16_used_specific_object ;
+                                  owl:someValuesFrom crm:E89_Propositional_Object
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty crm:P16_used_specific_object ;
+                                  owl:someValuesFrom :HeritageObject
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty crm:P1_is_identified_by ;
+                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass crm:E33_E41_Linguistic_Appellation
+                                ] .
+
+
+###  http://www.cidoc-crm.org/E89_Propositional_Object
+crm:E89_Propositional_Object rdf:type owl:Class ;
+                             owl:equivalentClass :CuratorialNarrative .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#CuratorialNarrative
+:CuratorialNarrative rdf:type owl:Class ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasAssociatedHeritageObject ;
+                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :HeritageObject
+                                     ] .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#HeritageObject
+:HeritageObject rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Nationality
+:Nationality rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://vocab.getty.edu/aat/300054766
+<http://vocab.getty.edu/aat/300054766> rdf:type owl:NamedIndividual ,
+                                                <http://vocab.getty.edu/aat/300054766> .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#A02_King_Caspar
+:A02_King_Caspar rdf:type owl:NamedIndividual ,
+                          crm:E22_Human-Made_Object ,
+                          :HeritageObject ;
+                 crm:P108i_was_produced_by :A02_Production ;
+                 crm:P16i_was_used_for :BlackinRembrandtsTime ;
+                 crm:P65_shows_visual_item :A02_Model ,
+                                           :Doublet ,
+                                           :Incense_pot ;
+                 rdfs:label "King Caspar"^^rdfs:Literal ,
+                            "King Caspar"^^<internal:anonymous-constants> .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#A02_Model
+:A02_Model rdf:type owl:NamedIndividual ,
+                    crm:E36_Visual_Item ;
+           crm:P65i_is_shown_by :A02_King_Caspar ;
+           :hasInterpretation "Legend has it that one of the three magi who came to worship the Christ child was an African, sometimes called Caspar, sometimes Balthasar. Heerschop painted him without surroundings or story. His identity is inferred from his expensive clothes and the jar of incense, but it is his face that draws attention—he looks at us proudly and self-confidently."^^rdfs:Literal ,
+                              "Legend has it that one of the three magi who came to worship the Christ child was an African, sometimes called Caspar, sometimes Balthasar. Heerschop painted him without surroundings or story. His identity is inferred from his expensive clothes and the jar of incense, but it is his face that draws attention—he looks at us proudly and self-confidently."^^<internal:anonymous-constants> .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#A02_Production
+:A02_Production rdf:type owl:NamedIndividual ,
+                         crm:E12_Production ;
+                crm:P14_carried_out_by :Hendrick_Heerschop ;
+                crm:P15_was_influenced_by :Rembrandt ;
+                crm:P4_has_Time-span :A02_Timespan .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#A02_Timespan
+:A02_Timespan rdf:type owl:NamedIndividual ,
+                       crm:E52_Time-Span ;
+              rdfs:label 1654 .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#BlackinRembrandtsTime
+:BlackinRembrandtsTime rdf:type owl:NamedIndividual ,
+                                crm:E7_Activity ;
+                       crm:P16_used_specific_object :A02_King_Caspar ,
+                                                    :Non_Stereotypical_Representation_of_Black_People ,
+                                                    :Painters_from_the_Dutch_Golden_Age ;
+                       crm:P1_is_identified_by :E1 ;
+                       crm:P2_has_type :Exhibition ;
+                       crm:P67i_is_referred_to_by :E1_Description .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Doublet
+:Doublet rdf:type owl:NamedIndividual ,
+                  crm:E36_Visual_Item ;
+         crm:P65i_is_shown_by :A02_King_Caspar ;
+         :hasInterpretation "The man in the painting is seen wearing a yellow doublet paired with an intricately detailed and jeweled cloak. A doublet is a type of form-fitted waist-length jacket, often made from linen or wool, that added shape and padding to the body while keeping the wearer warm. Additionally, the color yellow was often associated with the sun and seen as a connection to God in many religions."^^rdfs:Literal ,
+                            "The man in the painting is seen wearing a yellow doublet paired with an intricately detailed and jeweled cloak. A doublet is a type of form-fitted waist-length jacket, often made from linen or wool, that added shape and padding to the body while keeping the wearer warm. Additionally, the color yellow was often associated with the sun and seen as a connection to God in many religions."^^<internal:anonymous-constants> .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Dutch
+:Dutch rdf:type owl:NamedIndividual ,
+                :Nationality .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#E1
+:E1 rdf:type owl:NamedIndividual ,
+             crm:E33_E41_Linguistic_Appellation ;
+    crm:P190_has_symbolic_content "Black in Rembrandt's Times"^^rdfs:Literal ,
+                                  "Black in Rembrandt's Times"^^<internal:anonymous-constants> .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#E1_Description
+:E1_Description rdf:type owl:NamedIndividual ,
+                         crm:E33_E41_Linguistic_Appellation ;
+                crm:P190_has_symbolic_content "Black people were present in seventeenth-century Holland, both in society and in art. This subject has long remained in the shadows, but wrongly so. Rembrandt and many of his contemporaries made magnificent works of art that depict black people. Those works have been collected in this book. The biggest surprise: the later stereotypes of black people had not yet become dominant. Painters portrayed individual black models from life, with all their personal characteristics. Furthermore, black people were not always secondary figures in minor roles, but sometimes formed the main subject of the art work. This book explores the conditions that gave rise to these remarkable works of art and the reasons the public image of black people changed from about 1660 onwards. It tells the stories of artists who aimed to capture the visual world, the impact of transatlantic slavery, and a small community of free black people in Amsterdam’s Jodenbreestraat."^^rdfs:Literal ,
+                                              "Black people were present in seventeenth-century Holland, both in society and in art. This subject has long remained in the shadows, but wrongly so. Rembrandt and many of his contemporaries made magnificent works of art that depict black people. Those works have been collected in this book. The biggest surprise: the later stereotypes of black people had not yet become dominant. Painters portrayed individual black models from life, with all their personal characteristics. Furthermore, black people were not always secondary figures in minor roles, but sometimes formed the main subject of the art work. This book explores the conditions that gave rise to these remarkable works of art and the reasons the public image of black people changed from about 1660 onwards. It tells the stories of artists who aimed to capture the visual world, the impact of transatlantic slavery, and a small community of free black people in Amsterdam’s Jodenbreestraat."^^<internal:anonymous-constants> .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Exhibition
+:Exhibition rdf:type owl:NamedIndividual ,
+                     crm:E55_Type ;
+            crm:P1_is_identified_by <http://vocab.getty.edu/aat/300054766> ;
+            rdfs:label "Exhibiting"^^rdfs:Literal ,
+                       "Exhibiting"^^<internal:anonymous-constants> .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Hendrick_Heerschop
+:Hendrick_Heerschop rdf:type owl:NamedIndividual ,
+                             crm:E21_Person ;
+                    :hasNationality :Dutch ;
+                    rdfs:label "Hendrick Heerschop"^^rdfs:Literal ,
+                               "Hendrick Heerschop"^^<internal:anonymous-constants> .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Incense_pot
+:Incense_pot rdf:type owl:NamedIndividual ,
+                      crm:E36_Visual_Item ;
+             crm:P65i_is_shown_by :A02_King_Caspar ;
+             :hasInterpretation "The golden pot in the painting represents an incense pot, a gift for Jesus. Presented in an ornately decorated golden container and thus expressing its worth, as explained in the Bible, the gold represented the kingship of Jesus. The incense shown in the painting is frankincense, which embodied Jesus’ deity and was burnt in temples as an offering for God. King Caspar gifting this to Jesus affirms that Jesus is both man and God. Additionally, frankincense was thought to have healing powers and was used in traditional healing methods."^^rdfs:Literal ,
+                                "The golden pot in the painting represents an incense pot, a gift for Jesus. Presented in an ornately decorated golden container and thus expressing its worth, as explained in the Bible, the gold represented the kingship of Jesus. The incense shown in the painting is frankincense, which embodied Jesus’ deity and was burnt in temples as an offering for God. King Caspar gifting this to Jesus affirms that Jesus is both man and God. Additionally, frankincense was thought to have healing powers and was used in traditional healing methods."^^<internal:anonymous-constants> .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Non_Stereotypical_Representation_of_Black_People
+:Non_Stereotypical_Representation_of_Black_People rdf:type owl:NamedIndividual ,
+                                                           crm:E89_Propositional_Object ,
+                                                           :CuratorialNarrative ;
+                                                  crm:P16i_was_used_for :BlackinRembrandtsTime ;
+                                                  :hasAssociatedHeritageObject :A02_King_Caspar ;
+                                                  :hasDescription """AUTONOMOUS AND NON-STEREOTYPICAL REPRESENTATION OF BLACK PEOPLE DURING THE DUTCH GOLDEN AGE
+1. Individuality and Realism:
+
+- Artists like Rembrandt and his contemporaries often depicted black individuals with a high degree of realism, capturing their unique personal characteristics.
+- These depictions were based on live models, emphasizing their individuality rather than conforming to stereotypes.
+
+2. Central Figures:
+
+- Black people were not always portrayed as secondary figures or in subservient roles. In many artworks, they were the main subjects, highlighting their importance and presence in society.
+
+3. Diverse Roles:
+
+- Black individuals were shown in various roles beyond servitude, such as musicians, drummers, and participants in biblical scenes.
+- These representations showcased their active participation in different aspects of life, reflecting a more inclusive view.
+
+4. Positive Attributes:
+
+- Early depictions often highlighted positive attributes such as dignity, strength, and beauty.
+- Artists like Gerrit Dou and Rembrandt portrayed black people with a sense of respect and admiration, avoiding the negative stereotypes that became more common later.
+
+5. Community Presence:
+
+- The presence of a small community of free black people in Amsterdam's Jodenbreestraat influenced these representations.
+- This community provided artists with real-life models, allowing for more accurate and respectful depictions."""^^rdfs:Literal ,
+                                                                  """AUTONOMOUS AND NON-STEREOTYPICAL REPRESENTATION OF BLACK PEOPLE DURING THE DUTCH GOLDEN AGE
+1. Individuality and Realism:
+
+- Artists like Rembrandt and his contemporaries often depicted black individuals with a high degree of realism, capturing their unique personal characteristics.
+- These depictions were based on live models, emphasizing their individuality rather than conforming to stereotypes.
+
+2. Central Figures:
+
+- Black people were not always portrayed as secondary figures or in subservient roles. In many artworks, they were the main subjects, highlighting their importance and presence in society.
+
+3. Diverse Roles:
+
+- Black individuals were shown in various roles beyond servitude, such as musicians, drummers, and participants in biblical scenes.
+- These representations showcased their active participation in different aspects of life, reflecting a more inclusive view.
+
+4. Positive Attributes:
+
+- Early depictions often highlighted positive attributes such as dignity, strength, and beauty.
+- Artists like Gerrit Dou and Rembrandt portrayed black people with a sense of respect and admiration, avoiding the negative stereotypes that became more common later.
+
+5. Community Presence:
+
+- The presence of a small community of free black people in Amsterdam's Jodenbreestraat influenced these representations.
+- This community provided artists with real-life models, allowing for more accurate and respectful depictions."""^^<internal:anonymous-constants> .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Painters_from_the_Dutch_Golden_Age
+:Painters_from_the_Dutch_Golden_Age rdf:type owl:NamedIndividual ,
+                                             crm:E89_Propositional_Object ,
+                                             :CuratorialNarrative ;
+                                    crm:P16i_was_used_for :BlackinRembrandtsTime ;
+                                    :hasAssociatedHeritageObject :A02_King_Caspar ;
+                                    :hasDescription """DUTCH GOLDEN AGE
+1. Economic Prosperity:
+
+- The Dutch Golden Age (17th century) was marked by significant economic growth, driven by trade, colonization, and the establishment of the Dutch East India Company (VOC) and the Dutch West India Company (WIC).
+- Amsterdam became a major hub for global trade, attracting diverse populations, including black people from Africa and the Americas.
+
+2. Presence of Black People:
+
+- Black individuals were present in various roles, including as enslaved people, servants, and sailors.
+- A small community of free black people emerged in Amsterdam, particularly around the Jodenbreestraat.
+
+3. Artistic Representation:
+
+- Artists like Rembrandt and his contemporaries depicted black people in their works, often portraying them with individuality and realism.
+
+STEREOTYPICAL REPRESENTATION IN ART
+
+1. Early Realism:
+
+- Initially, black people were depicted with a high degree of realism, capturing their unique characteristics and portraying them in diverse roles.
+
+2. Shift to Stereotypes:
+
+- As the transatlantic slave trade intensified, depictions of black people became more stereotypical.
+- They were often shown in subservient roles, emphasizing their status as servants or slaves.
+
+3. Exoticism and Commodification:
+
+- Black individuals were sometimes depicted in exotic costumes, reinforcing their \"otherness\" and justifying their exploitation.
+- Art began to reflect and reinforce racial hierarchies, portraying black people in ways that supported the economic interests of the time."""^^rdfs:Literal ,
+                                                    """DUTCH GOLDEN AGE
+1. Economic Prosperity:
+
+- The Dutch Golden Age (17th century) was marked by significant economic growth, driven by trade, colonization, and the establishment of the Dutch East India Company (VOC) and the Dutch West India Company (WIC).
+- Amsterdam became a major hub for global trade, attracting diverse populations, including black people from Africa and the Americas.
+
+2. Presence of Black People:
+
+- Black individuals were present in various roles, including as enslaved people, servants, and sailors.
+- A small community of free black people emerged in Amsterdam, particularly around the Jodenbreestraat.
+
+3. Artistic Representation:
+
+- Artists like Rembrandt and his contemporaries depicted black people in their works, often portraying them with individuality and realism.
+
+STEREOTYPICAL REPRESENTATION IN ART
+
+1. Early Realism:
+
+- Initially, black people were depicted with a high degree of realism, capturing their unique characteristics and portraying them in diverse roles.
+
+2. Shift to Stereotypes:
+
+- As the transatlantic slave trade intensified, depictions of black people became more stereotypical.
+- They were often shown in subservient roles, emphasizing their status as servants or slaves.
+
+3. Exoticism and Commodification:
+
+- Black individuals were sometimes depicted in exotic costumes, reinforcing their \"otherness\" and justifying their exploitation.
+- Art began to reflect and reinforce racial hierarchies, portraying black people in ways that supported the economic interests of the time."""^^<internal:anonymous-constants> .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Rembrandt
+:Rembrandt rdf:type owl:NamedIndividual ,
+                    crm:E21_Person ;
+           rdfs:label "Rembrandt"^^rdfs:Literal ,
+                      "Rembrandt"^^<internal:anonymous-constants> .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
