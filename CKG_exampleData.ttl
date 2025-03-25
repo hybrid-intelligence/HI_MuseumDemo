@@ -1,4 +1,4 @@
-@prefix : <http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#> .
+@prefix : <https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#> .
 @prefix aat: <http://vocab.getty.edu/aat/> .
 @prefix crm: <http://www.cidoc-crm.org/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -6,9 +6,9 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#> .
+@base <https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#> .
 
-<http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#> rdf:type owl:Ontology .
+<https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#> rdf:type owl:Ontology .
 
 #################################################################
 #    Datatypes
@@ -100,13 +100,13 @@ crm:P67i_is_referred_to_by rdf:type owl:ObjectProperty ;
                            rdfs:range crm:E33_E41_Linguistic_Appellation .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#hasAssociatedHeritageObject
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#hasAssociatedHeritageObject
 :hasAssociatedHeritageObject rdf:type owl:ObjectProperty ;
                              rdfs:domain :CuratorialNarrative ;
                              rdfs:range :HeritageObject .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#hasNationality
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#hasNationality
 :hasNationality rdf:type owl:ObjectProperty .
 
 
@@ -126,22 +126,22 @@ crm:P33_used_specific_technique rdf:type owl:DatatypeProperty ;
                                 rdfs:range rdfs:Literal .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#hasDescription
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:DatatypeProperty ;
+           rdfs:range rdfs:Literal ,
+                      xsd:integer .
+
+
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#hasDescription
 :hasDescription rdf:type owl:DatatypeProperty ;
                 rdfs:domain :CuratorialNarrative ;
                 rdfs:range rdfs:Literal .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#hasInterpretation
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#hasInterpretation
 :hasInterpretation rdf:type owl:DatatypeProperty ;
                    rdfs:domain crm:E36_Visual_Item ;
                    rdfs:range rdfs:Literal .
-
-
-###  http://www.w3.org/2000/01/rdf-schema#label
-rdfs:label rdf:type owl:DatatypeProperty ;
-           rdfs:range rdfs:Literal ,
-                      xsd:integer .
 
 
 #################################################################
@@ -228,7 +228,7 @@ crm:E89_Propositional_Object rdf:type owl:Class ;
                              owl:equivalentClass :CuratorialNarrative .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#CuratorialNarrative
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#CuratorialNarrative
 :CuratorialNarrative rdf:type owl:Class ;
                      rdfs:subClassOf [ rdf:type owl:Restriction ;
                                        owl:onProperty :hasAssociatedHeritageObject ;
@@ -237,11 +237,11 @@ crm:E89_Propositional_Object rdf:type owl:Class ;
                                      ] .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#HeritageObject
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#HeritageObject
 :HeritageObject rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Nationality
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#Nationality
 :Nationality rdf:type owl:Class .
 
 
@@ -254,7 +254,7 @@ crm:E89_Propositional_Object rdf:type owl:Class ;
                                                 <http://vocab.getty.edu/aat/300054766> .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#A02_King_Caspar
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#A02_King_Caspar
 :A02_King_Caspar rdf:type owl:NamedIndividual ,
                           crm:E22_Human-Made_Object ,
                           :HeritageObject ;
@@ -267,7 +267,7 @@ crm:E89_Propositional_Object rdf:type owl:Class ;
                             "King Caspar"^^<internal:anonymous-constants> .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#A02_Model
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#A02_Model
 :A02_Model rdf:type owl:NamedIndividual ,
                     crm:E36_Visual_Item ;
            crm:P65i_is_shown_by :A02_King_Caspar ;
@@ -275,7 +275,7 @@ crm:E89_Propositional_Object rdf:type owl:Class ;
                               "Legend has it that one of the three magi who came to worship the Christ child was an African, sometimes called Caspar, sometimes Balthasar. Heerschop painted him without surroundings or story. His identity is inferred from his expensive clothes and the jar of incense, but it is his face that draws attention—he looks at us proudly and self-confidently."^^<internal:anonymous-constants> .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#A02_Production
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#A02_Production
 :A02_Production rdf:type owl:NamedIndividual ,
                          crm:E12_Production ;
                 crm:P14_carried_out_by :Hendrick_Heerschop ;
@@ -283,13 +283,13 @@ crm:E89_Propositional_Object rdf:type owl:Class ;
                 crm:P4_has_Time-span :A02_Timespan .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#A02_Timespan
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#A02_Timespan
 :A02_Timespan rdf:type owl:NamedIndividual ,
                        crm:E52_Time-Span ;
               rdfs:label 1654 .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#BlackinRembrandtsTime
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#BlackinRembrandtsTime
 :BlackinRembrandtsTime rdf:type owl:NamedIndividual ,
                                 crm:E7_Activity ;
                        crm:P16_used_specific_object :A02_King_Caspar ,
@@ -300,7 +300,7 @@ crm:E89_Propositional_Object rdf:type owl:Class ;
                        crm:P67i_is_referred_to_by :E1_Description .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Doublet
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#Doublet
 :Doublet rdf:type owl:NamedIndividual ,
                   crm:E36_Visual_Item ;
          crm:P65i_is_shown_by :A02_King_Caspar ;
@@ -308,26 +308,26 @@ crm:E89_Propositional_Object rdf:type owl:Class ;
                             "The man in the painting is seen wearing a yellow doublet paired with an intricately detailed and jeweled cloak. A doublet is a type of form-fitted waist-length jacket, often made from linen or wool, that added shape and padding to the body while keeping the wearer warm. Additionally, the color yellow was often associated with the sun and seen as a connection to God in many religions."^^<internal:anonymous-constants> .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Dutch
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#Dutch
 :Dutch rdf:type owl:NamedIndividual ,
                 :Nationality .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#E1
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#E1
 :E1 rdf:type owl:NamedIndividual ,
              crm:E33_E41_Linguistic_Appellation ;
     crm:P190_has_symbolic_content "Black in Rembrandt's Times"^^rdfs:Literal ,
                                   "Black in Rembrandt's Times"^^<internal:anonymous-constants> .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#E1_Description
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#E1_Description
 :E1_Description rdf:type owl:NamedIndividual ,
                          crm:E33_E41_Linguistic_Appellation ;
                 crm:P190_has_symbolic_content "Black people were present in seventeenth-century Holland, both in society and in art. This subject has long remained in the shadows, but wrongly so. Rembrandt and many of his contemporaries made magnificent works of art that depict black people. Those works have been collected in this book. The biggest surprise: the later stereotypes of black people had not yet become dominant. Painters portrayed individual black models from life, with all their personal characteristics. Furthermore, black people were not always secondary figures in minor roles, but sometimes formed the main subject of the art work. This book explores the conditions that gave rise to these remarkable works of art and the reasons the public image of black people changed from about 1660 onwards. It tells the stories of artists who aimed to capture the visual world, the impact of transatlantic slavery, and a small community of free black people in Amsterdam’s Jodenbreestraat."^^rdfs:Literal ,
                                               "Black people were present in seventeenth-century Holland, both in society and in art. This subject has long remained in the shadows, but wrongly so. Rembrandt and many of his contemporaries made magnificent works of art that depict black people. Those works have been collected in this book. The biggest surprise: the later stereotypes of black people had not yet become dominant. Painters portrayed individual black models from life, with all their personal characteristics. Furthermore, black people were not always secondary figures in minor roles, but sometimes formed the main subject of the art work. This book explores the conditions that gave rise to these remarkable works of art and the reasons the public image of black people changed from about 1660 onwards. It tells the stories of artists who aimed to capture the visual world, the impact of transatlantic slavery, and a small community of free black people in Amsterdam’s Jodenbreestraat."^^<internal:anonymous-constants> .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Exhibition
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#Exhibition
 :Exhibition rdf:type owl:NamedIndividual ,
                      crm:E55_Type ;
             crm:P1_is_identified_by <http://vocab.getty.edu/aat/300054766> ;
@@ -335,7 +335,7 @@ crm:E89_Propositional_Object rdf:type owl:Class ;
                        "Exhibiting"^^<internal:anonymous-constants> .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Hendrick_Heerschop
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#Hendrick_Heerschop
 :Hendrick_Heerschop rdf:type owl:NamedIndividual ,
                              crm:E21_Person ;
                     :hasNationality :Dutch ;
@@ -343,7 +343,7 @@ crm:E89_Propositional_Object rdf:type owl:Class ;
                                "Hendrick Heerschop"^^<internal:anonymous-constants> .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Incense_pot
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#Incense_pot
 :Incense_pot rdf:type owl:NamedIndividual ,
                       crm:E36_Visual_Item ;
              crm:P65i_is_shown_by :A02_King_Caspar ;
@@ -351,7 +351,7 @@ crm:E89_Propositional_Object rdf:type owl:Class ;
                                 "The golden pot in the painting represents an incense pot, a gift for Jesus. Presented in an ornately decorated golden container and thus expressing its worth, as explained in the Bible, the gold represented the kingship of Jesus. The incense shown in the painting is frankincense, which embodied Jesus’ deity and was burnt in temples as an offering for God. King Caspar gifting this to Jesus affirms that Jesus is both man and God. Additionally, frankincense was thought to have healing powers and was used in traditional healing methods."^^<internal:anonymous-constants> .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Non_Stereotypical_Representation_of_Black_People
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#Non_Stereotypical_Representation_of_Black_People
 :Non_Stereotypical_Representation_of_Black_People rdf:type owl:NamedIndividual ,
                                                            crm:E89_Propositional_Object ,
                                                            :CuratorialNarrative ;
@@ -407,7 +407,7 @@ crm:E89_Propositional_Object rdf:type owl:Class ;
 - This community provided artists with real-life models, allowing for more accurate and respectful depictions."""^^<internal:anonymous-constants> .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Painters_from_the_Dutch_Golden_Age
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#Painters_from_the_Dutch_Golden_Age
 :Painters_from_the_Dutch_Golden_Age rdf:type owl:NamedIndividual ,
                                              crm:E89_Propositional_Object ,
                                              :CuratorialNarrative ;
@@ -475,7 +475,7 @@ STEREOTYPICAL REPRESENTATION IN ART
 - Art began to reflect and reinforce racial hierarchies, portraying black people in ways that supported the economic interests of the time."""^^<internal:anonymous-constants> .
 
 
-###  http://www.semanticweb.org/xln105/ontologies/2025/2/CurationOntology#Rembrandt
+###  https://raw.githubusercontent.com/hybrid-intelligence/HI_MuseumDemo/refs/heads/main/CKG_exampleData.ttl#Rembrandt
 :Rembrandt rdf:type owl:NamedIndividual ,
                     crm:E21_Person ;
            rdfs:label "Rembrandt"^^rdfs:Literal ,
