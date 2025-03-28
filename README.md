@@ -13,7 +13,7 @@ Repository for the HI project Museum Case demonstrator.
 * **CKG_exampleData**: the RDF in turtle serialization with the Curation Ontology and the Data about our example scenario
 * **CKG_Demo**: Image with the schema of the Ontology
 
-  # Generating argumentation Tree
+  # Generating argumentation trees
   Based on the Curation Knowledge Graph, we generate argumentation trees as an immediate step to have a dialogue between a VR system and a user. The argumentation trees are generated from the Curation KG generated above.
 
   * **Requirements**:
