@@ -29,7 +29,9 @@ Repository for the HI project Museum Case demonstrator.
     + Clone a repository to your local computer using a Github link.
     + Go to the directory where your source code is, i.e., .\SAF-Argumentation\code
     + To generate argumentation trees, you need to follow the steps:
+      
           1. Convert  RDF/XML in Turtle format into DLGP format: you run the command: javac rdfToGLGP.java
+      
           2. Generate argumentation from the converted files, you run the following command: javac Experiment1.java 
  
   
