@@ -27,7 +27,7 @@ Repository for the HI project Museum Case demonstrator.
   - Perform the following steps:
     + To use, create a location where you store the DLGP. You can store datasets in the created folder.
     + Clone a repository to your local computer using a Github link.
-    + Go to the directory where your source code is, i.e., .\SAF-Argumentation\code
+    + Go to the directory where your source code is, i.e., .\HI_MuseumDemo\code
     + To generate argumentation trees, you need to follow the steps:
       
           1. Convert  RDF/XML in Turtle format into DLGP format: you run the command: javac rdfToGLGP.java
