@@ -43,12 +43,14 @@ In the CKG folder.
 * **Useage**:
   - The code has been made available to reproduce the results we show in our paper. To make sure that it is possible we would refer to the CODE folder.
   - Perform the following steps:
-    + To use, create a location where you store the DLGP. You can store datasets in the created folder.
+    + To use, create a location where you store the DLGP. You can store datasets in the created folder, i.e., the "data" folder.
     + Clone a repository to your local computer using a Github link.
     + Go to the directory where your source code is, i.e., .\HI_MuseumDemo\code
     + To generate argumentation trees, you need to follow the steps:
+   
+          1. Compile the project by running the following command in the root directory (where pom.xml is located): mvn:compile
       
-          1. Convert  RDF/XML in Turtle format into DLGP format: you run the command: javac rdfToGLGP.java
+          2. Convert  RDF/XML in Turtle format into DLGP format: you run the following command: mvn exec:java -Dexec.mainClass="com.mycompany.owl.rdfToGLGP"
       
-          2. Generate argumentation from the converted files, you run the following command: javac Experiment1.java 
+          3. Generate argumentation from the converted files, you run the following command: mvn exec:java -Dexec.mainClass="fr.lirmm.graphik.NAry.Experiment1" 
  
